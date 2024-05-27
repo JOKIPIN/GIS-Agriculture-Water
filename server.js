@@ -45,6 +45,10 @@ app.use('/', protectedRoutes);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/data', express.static(path.join(__dirname, 'data')));
+
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+
 // not found page
 app.use((req, res, next) => {
     res.status(404).render('404');

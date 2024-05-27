@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
-<!-- Lo sesuaian aja ya bang ini halaman -->
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-    <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
-        <h1 class="text-2xl mb-6 text-center">Login</h1>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <h1 class="text-2xl font-bold mb-6 text-center">Login</h1>
         <% if (errors && errors.length > 0) { %>
             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
                 <% errors.forEach(function(error) { %>
@@ -21,29 +19,20 @@
         <form id="loginForm" action="/auth/login" method="POST">
             <div class="mb-4">
                 <label for="username" class="block text-gray-700">Username:</label>
-                <input type="text" id="username" name="username" class="mt-1 p-2 w-full border rounded" required value="<%= inputData && inputData.username %>">
+                <input type="text" id="username" name="username" class="mt-1 p-2 w-full border rounded focus:ring focus:ring-blue-200" required value="<%= inputData && inputData.username %>">
             </div>
             <div class="mb-4">
                 <label for="password" class="block text-gray-700">Password:</label>
-                <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded" required>
+                <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded focus:ring focus:ring-blue-200" required>
             </div>
             <div class="mb-6">
-                <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded">Login</button>
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition-colors">Login</button>
             </div>
         </form>
-        <p class="text-center"><a href="/register.html" class="text-blue-500">Register</a></p>
+        <div class="text-center">
+            <p class="text-gray-700">Don't have an account? <a href="/register.html" class="text-blue-500 hover:underline">Register</a></p>
+            <a href="/" class="inline-block mt-4 bg-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-400 transition-colors">Kembali</a>
+        </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('error') === 'unauthorized') {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Unauthorized',
-                    text: 'You must log in to access the map.',
-                });
-            }
-        });
-    </script>
 </body>
 </html>

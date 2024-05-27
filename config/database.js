@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// Ini db nya pake mongodb (install dulu app mongodb mu di wweb mongo db ke com/laptop)
+// Ini database nya pake mongodb
 const connectDB = async () => {
     try {
         await mongoose.connect('mongodb://localhost:27017/geo-info-system');
