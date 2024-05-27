@@ -4,17 +4,17 @@ Website Sistem Informasi Geografis Pemetaan Pertanian dan Kelautan Berbasi Node 
 
 ## Install
 
-Clone atau install proyeknya terserah
+clone atau install reponya terserah
 ```bash
 git clode https://github.com/JOKIPIN/GIS-Agriculture-Water.git
 ```
 
-Install Depedendency Node nya
+install depedendency node nya
 ```bash
 npm install
 ```
 
-Download MongoDB terlebih dahulu untuk db nya
+download mongoDB di webnya terlebih dahulu untuk db nya
 
 🔗 https://www.mongodb.com/try/download/community
 
@@ -22,7 +22,7 @@ Download MongoDB terlebih dahulu untuk db nya
 mongod
 ```
 
-Jalankan Project nya
+jalankan project nya
 ```bash
 node server.js
 ```
